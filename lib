@@ -1,0 +1,25 @@
+  import java.util.regex.*;
+
+  public class MatchPhoneNumbers {
+   public static void main(String[] args) {           
+     String[] testStrings = {               
+               /* Following are valid phone number examples */             
+              "(123)4567890", "1234567890", "123-456-7890", "(123)456-7890",
+              /* Following are invalid phone numbers */ 
+              "(1234567890)","123)4567890", "12345678901", "(1)234567890",
+              "(123)-4567890", "1", "12-3456-7890", "123-4567", "Hello world"};
+
+             // TODO: Modify the following line. Use your regular expression here
+              String pattern = "^/d(?:-/d{3}){3}/d$";    
+             // current pattern recognizes any string of digits           
+             // Apply regular expression to each test string           
+             for(String inputString : testStrings) {
+                System.out.print(inputString + ": "); 
+                if (inputString.matches(pattern)) {     
+                    System.out.println("Valid"); 
+                } else {     
+                    System.out.println("Invalid"); 
+                }
+             }
+      }
+  }
